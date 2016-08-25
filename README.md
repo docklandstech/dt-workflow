@@ -1,4 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/docklandstech/dt-workflow.png?label=ready&title=Ready)](https://waffle.io/docklandstech/dt-workflow)
 # Docklands Tech Workflow
 Workflow execution & task dependency manager (or, a productive way to experiment with Kotlin)
 
@@ -15,6 +14,9 @@ This tool is heavily worked on, and not stable enough for any sustained use. We 
 5. Publish the branch (`git push origin my-new-feature`)
 6. Create a new Pull Request
 7. Profit! :white_check_mark:
+
+Current task status: 
+[![Stories in Ready](https://badge.waffle.io/docklandstech/dt-workflow.png?label=ready&title=Ready)](https://waffle.io/docklandstech/dt-workflow)
 
 ## Free tools for viewing BPMN diagrams 
 http://demo.bpmn.io/
