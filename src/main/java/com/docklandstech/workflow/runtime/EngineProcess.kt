@@ -12,6 +12,8 @@ class EngineProcess {
     fun run(config: EngineConfig, bpmnFileName: String) {
         val parser = BpmnParser()
         val graph = parser.parse(Paths.get(bpmnFileName))
+        val runner : WorkflowRunner = WorkflowRunner(graph)
+        runner.run()
     }
 
     companion object {

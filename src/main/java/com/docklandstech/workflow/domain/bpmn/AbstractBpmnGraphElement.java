@@ -1,5 +1,8 @@
 package com.docklandstech.workflow.domain.bpmn;
 
-public abstract class AbstractBpmnGraphElement {
-  public abstract String getId();
+import java.util.List;
+
+public interface AbstractBpmnGraphElement {
+  String getId();
+  List<String> getNextTaskIDs();
 }

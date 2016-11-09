@@ -1,14 +1,14 @@
 package com.docklandstech.workflow.domain.bpmn;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @JacksonXmlRootElement(namespace = "bpmn", localName = "process")
-public class BpmnProcess extends AbstractBpmnGraphElement {
+public class BpmnProcess implements AbstractBpmnGraphElement {
 
   @JacksonXmlProperty(isAttribute = true)
   private String id;
@@ -96,5 +96,10 @@ public class BpmnProcess extends AbstractBpmnGraphElement {
   @Override
   public String getId() {
     return id;
+  }
+
+  @Override
+  public List<String> getNextTaskIDs() {
+    throw new UnsupportedOperationException("A process can't have a next task");
   }
 }

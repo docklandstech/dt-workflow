@@ -1,13 +1,14 @@
 package com.docklandstech.workflow.domain.bpmn;
 
-import java.util.List;
-
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @JacksonXmlRootElement(namespace = "bpmn", localName = "exclusiveGateway")
-public class BpmnExclusiveGateway extends AbstractBpmnGraphElement {
+public class BpmnExclusiveGateway implements AbstractBpmnGraphElement {
   @JacksonXmlProperty(isAttribute = true)
   public String id;
   @JacksonXmlProperty(isAttribute = true)
@@ -22,5 +23,10 @@ public class BpmnExclusiveGateway extends AbstractBpmnGraphElement {
   @Override
   public String getId() {
     return id;
+  }
+
+  @Override
+  public List<String> getNextTaskIDs() {
+    return outgoingFlows.stream().map(x -> x.value).collect(Collectors.toList());
   }
 }

@@ -43,6 +43,7 @@ class BpmnParserTest {
                 "Task_10zg8wa",
                 "ExclusiveGateway_0jg3gwp",
                 "EndEvent_0j4fie2")
-        assert(graph.getVertices().map { x -> x.id }.containsAll(expectedGraphElements))
+
+        assert(graph.getVertices()!!.map { x -> x.id }.containsAll(expectedGraphElements))
     }
 }
